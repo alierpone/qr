@@ -213,23 +213,14 @@
         window.onload = function () {
             const urlParams = new URLSearchParams(window.location.search);
             const specificId = urlParams.get('id_thung');
-            const item = urlParams.get('item');-->
-            const allDetails = urlParams.get('allDetails'); 
-				
-			alert('ID không được cung cấp trong URL1.');
-				
+            const item = urlParams.get('item');
+            const allDetails = urlParams.get('allDetails');
+
             if (specificId) {
-			
-				
-                loadData(specificId);
-				loadData(item, specificId, allDetails);
-                
-				
-				setTimeout(function () {
+                loadData(item, specificId, allDetails);
+                setTimeout(function () {
                     window.print();
                 }, 500);
-				
-				
 
             } else {
                 alert('ID không được cung cấp trong URL.');
